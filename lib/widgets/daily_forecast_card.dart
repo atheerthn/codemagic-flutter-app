@@ -24,7 +24,9 @@ class DailyForecastCard extends StatelessWidget {
               SizedBox(
                 width: 80,
                 child: Text(
-                  isToday ? 'Today' : DateFormat('EEE, d').format(forecast.date),
+                  isToday
+                      ? 'Today'
+                      : DateFormat('EEE, d').format(forecast.date),
                   style: theme.textTheme.bodyMedium?.copyWith(
                     fontWeight: isToday ? FontWeight.bold : null,
                   ),
@@ -39,12 +41,17 @@ class DailyForecastCard extends StatelessWidget {
                 ),
               ),
               if (forecast.precipProbability > 0) ...[
-                Icon(Icons.water_drop, size: 14,
-                    color: theme.colorScheme.primary),
-                Text('${forecast.precipProbability.round()}%',
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.primary,
-                    )),
+                Icon(
+                  Icons.water_drop,
+                  size: 14,
+                  color: theme.colorScheme.primary,
+                ),
+                Text(
+                  '${forecast.precipProbability.round()}%',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.primary,
+                  ),
+                ),
                 const SizedBox(width: 12),
               ],
               Text(

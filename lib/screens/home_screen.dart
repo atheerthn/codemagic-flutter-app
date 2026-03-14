@@ -119,7 +119,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.cloud_off, size: 64, color: Colors.grey),
+                      const Icon(
+                        Icons.cloud_off,
+                        size: 64,
+                        color: Colors.grey,
+                      ),
                       const SizedBox(height: 16),
                       Text(_error!, style: theme.textTheme.bodyLarge),
                       const SizedBox(height: 16),
@@ -151,9 +155,12 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              Text(now, style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              )),
+              Text(
+                now,
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
               const SizedBox(height: 8),
               Text(
                 w.current.icon,
@@ -188,17 +195,21 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: [
-              Expanded(child: WeatherDetailCard(
-                icon: Icons.water_drop,
-                label: 'Humidity',
-                value: '${w.current.humidity}%',
-              )),
+              Expanded(
+                child: WeatherDetailCard(
+                  icon: Icons.water_drop,
+                  label: 'Humidity',
+                  value: '${w.current.humidity}%',
+                ),
+              ),
               const SizedBox(width: 8),
-              Expanded(child: WeatherDetailCard(
-                icon: Icons.air,
-                label: 'Wind',
-                value: '${w.current.windSpeed.round()} km/h',
-              )),
+              Expanded(
+                child: WeatherDetailCard(
+                  icon: Icons.air,
+                  label: 'Wind',
+                  value: '${w.current.windSpeed.round()} km/h',
+                ),
+              ),
             ],
           ),
         ),
