@@ -2,9 +2,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:codemagic_flutter_app/main.dart';
 
 void main() {
-  testWidgets('App renders correctly', (WidgetTester tester) async {
+  testWidgets('App renders and shows loading state', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
-    expect(find.text('Codemagic Test App'), findsOneWidget);
-    expect(find.text('Hello from Codemagic!'), findsOneWidget);
+    // App should render with a loading indicator initially
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
   });
 }
